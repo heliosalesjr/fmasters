@@ -40,7 +40,22 @@
 	</main>
 
 	<script id="clock.js">
+		const time = document.getElementById('time');
 
+		function updateClock() {
+			
+			const topOffset = (Math.random() * 100);
+			const leftOffset = (Math.random() * 100);
+			const now = new Date();
+			const hours = now.getHours();
+			const minutes = now.getMinutes();
+			const seconds = now.getSeconds();
+			time.setAttribute("style", `top: ${topOffset}%; left: ${leftOffset}%;`);
+
+			time.textContent = `${hours}:${minutes}:${seconds}`;
+		}
+		updateClock();
+		setInterval(updateClock, 1000);
 
 	</script>
 
