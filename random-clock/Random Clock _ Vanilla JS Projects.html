@@ -18,6 +18,7 @@
 			width: 200px;
 			position: relative;
 			font-size: xx-large;
+			color: rgb(100,25,100)
 		}
 	</style>
 
@@ -43,14 +44,19 @@
 		const time = document.getElementById('time');
 
 		function updateClock() {
-			
+
 			const topOffset = (Math.random() * 100);
 			const leftOffset = (Math.random() * 100);
+
+			const r = Math.random() * 255;
+			const g = Math.random() * 255;
+			const b = Math.random() * 255;
+			
 			const now = new Date();
 			const hours = now.getHours();
 			const minutes = now.getMinutes();
 			const seconds = now.getSeconds();
-			time.setAttribute("style", `top: ${topOffset}%; left: ${leftOffset}%;`);
+			time.setAttribute("style", `color: rgb(${r}, ${g}, ${b}); top: ${topOffset}%; left: ${leftOffset}%;`);
 
 			time.textContent = `${hours}:${minutes}:${seconds}`;
 		}
